@@ -1,0 +1,25 @@
+<!-- calci/templates/calci/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Welcome to Calculator</h1>
+    {% if result %}
+        <p>Result: {{ result }}</p>
+    {% endif %}
+    <form method="POST" action="{% url 'calculate' %}">
+        {% csrf_token %}
+        <input type="number" name="num1" placeholder="First Number" required><br>
+        <input type="number" name="num2" placeholder="Second Number" required><br>
+        <select name="operation">
+            <option value="ADD">Add</option>
+            <option value="SUBTRACT">Subtract</option>
+            <option value="MULTIPLY">Multiply</option>
+            <option value="DIVISION">Divide</option>
+        </select><br>
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>
