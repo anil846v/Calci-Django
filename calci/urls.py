@@ -4,6 +4,10 @@ from .import views
 
 urlpatterns = [
     path('', views.index, name = 'index'),
-    path('calculate/', views.calculate,name = 'calculate'),
+    path('cal/', views.calculate,name = 'calculate'),
+    # cal/ = this can be any name
+    # views.calculate = only view name which is present in [views.py] file
+    # This gives the route a name, so it can be referred to in templates using {% url 'calculate' %}.
+    
 
 ]
